@@ -61,7 +61,7 @@ const sessionOptions = {
 //mongo db connection establishing!!!
 
 async function main() {
-        await mongoose.connect("mongodb+srv://amanrathore4943_db_user:q0AQu3KG1urMVXAC@cluster0.u4zj6ig.mongodb.net/?appName=Cluster0");
+        await mongoose.connect(DB_URL);
     }; 
 
 main().then((res)=> {
