@@ -1,0 +1,57 @@
+<% layout("/layouts/boilerplate.ejs") %> ;
+
+        
+            <div class="row offset-2 mt-3" >
+                <div class="col-8">
+                        <br>
+        <h3><b>Add Your property :</b></h3>        
+             <form id="editForm" method="POST", action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+                <div class="mb-3">
+                        <label for="title" class="form-label"><b>Title :</b> </label>
+                         <input name="listing[title]" placeholder="Add a catchy Title" type="text" class="form-control" required>
+                         <div class="invalid-feedback">Title is Required!</div>
+                </div>
+               
+
+                <div class="mb-3">
+                        <label for="description" class="form-label"><b>Description :</b></label>
+                        <textarea type="text" name="listing[description]" placeholder="Add your description here" type="text" class="form-control"  required></textarea>
+                         <div class="invalid-feedback">Descritiption is too Short!</div>
+                </div>
+              
+                
+
+                <div class="mb-3">
+                 <label for="image" class="form-label"><b>Upload Image :</b></label>
+                  <input name="listing[image]" type="file" class="form-control" required>
+                  <div class="invalid-feedback">Listing Image is Required!</div>
+                </div>
+              
+                <div class="row">
+                          <div class="mb-3 col-4">
+                        <label for="price" class="form-label"><b>Price : </b></label>
+                        <input type="number" name= "listing[price]" placeholder="price" type="text" class="form-control" pattern="^[0-9]+$" required>
+                        <div class="invalid-feedback">Price is not valid!</div>
+                </div>
+                   <div class="mb-3 col-md-8">
+                  <label for="country" class="form-label"><b>Country :</b></label>
+                  <input name= "listing[country]" placeholder="country" class="form-control" required pattern="[A-Za-z]+">
+                  <div class="invalid-feedback">Country is Required!</div>  
+                            
+                </div>
+                </div>
+              
+              
+                <div class="mb-3 col-md-4">
+                         <label for="location" class="form-label"><b>Location :</b></label>
+                         <input type="text" name= "listing[location]" placeholder="Enter Location" class="form-control" required>
+                         <div class="invalid-feedback">Location is Required!</div>
+                </div>
+                
+             
+                <button class="btn btn-dark add-btn mt-3">Confirm</button>
+    </form>
+ </div>
+</div>
+
+
