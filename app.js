@@ -2,6 +2,7 @@ if(process.env.NODE_ENV !="production"){
     require("dotenv").config();
 }
 // console.log(process.env);
+
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -31,7 +32,8 @@ app.use(express.urlencoded({extended:true}));
 app.use(method_Override("_method"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "public")));
-//session management..
+
+                            //session management..
 
 const store = MongoStore.create({
     mongoUrl : process.env.ATLAS_DB,
@@ -58,7 +60,7 @@ const sessionOptions = {
         }
 };
 
-//mongo db connection establishing!!!
+                        //mongo db connection establishing!!!
 
 async function main() {
         await mongoose.connect(process.env.ATLAS_DB);
@@ -93,7 +95,7 @@ passport.deserializeUser(User.deserializeUser());
     next();
     });
 
-
+    // Server listening
 app.listen(8080,()=> {
         console.log("server is running");
     });
