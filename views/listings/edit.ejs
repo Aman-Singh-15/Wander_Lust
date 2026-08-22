@@ -40,14 +40,14 @@
          
             <div class="mb-3 col-md-8">
                 <label for="country" class="form-label"><b>Country :</b></label>
-                 <input name= "listing[country]" value="<%=data.country%>" type="text" class="form-control"  required >
+                 <input name= "listing[country]" value="<%=data.country%>"  class="form-control"  required pattern="[A-Za-z, .]+" >
                   <div class="invalid-feedback">Invalid Country!</div>
             </div>
      </div>
 
             <div class="mb-3 col-md-4">
             <label for="location" class="form-label"><b>Location :</b></label>
-            <input name= "listing[location]" value="<%=data.location%>" type="text" class="form-control"   required >
+            <input name= "listing[location]" value="<%=data.location%>"  class="form-control"  required pattern="[A-Za-z, .]+" >
              <div class="invalid-feedback">Location is Required!</div>
             </div>
             <br>

@@ -35,7 +35,7 @@
                 </div>
                    <div class="mb-3 col-md-8">
                   <label for="country" class="form-label"><b>Country :</b></label>
-                  <input name= "listing[country]" placeholder="country" class="form-control" required pattern="[A-Za-z]+">
+                  <input name= "listing[country]" placeholder="country" class="form-control" required pattern="[A-Za-z, .]+">
                   <div class="invalid-feedback">Country is Required!</div>  
                             
                 </div>
@@ -44,7 +44,7 @@
               
                 <div class="mb-3 col-md-4">
                          <label for="location" class="form-label"><b>Location :</b></label>
-                         <input type="text" name= "listing[location]" placeholder="Enter Location" class="form-control" required>
+                         <input  name= "listing[location]" placeholder="Enter Location" class="form-control" required pattern="[A-Za-z, .]+">
                          <div class="invalid-feedback">Location is Required!</div>
                 </div>
                 
