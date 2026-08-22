@@ -24,7 +24,7 @@ const listingsRouter = require("./routes/listing.js");
 const reviewsRouter = require("./routes/reviews.js");
 const userRouter = require("./routes/user.js");
 
-let DB_URL = process.env.ATLAS_DB;
+
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({extended:true}));
@@ -41,7 +41,7 @@ const store = MongoStore.create({
     touchAfter : 24 *3600,
 });
 
-store.on("error", ()=> {
+store.on("error", (err)=> {
         console.log("Error in MONGO SESSION STORE", err);
 })
 
@@ -61,7 +61,7 @@ const sessionOptions = {
 //mongo db connection establishing!!!
 
 async function main() {
-        await mongoose.connect(DB_URL);
+        await mongoose.connect(process.env.ATLAS_DB);
     }; 
 
 main().then((res)=> {
