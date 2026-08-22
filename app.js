@@ -34,7 +34,7 @@ app.use(express.static(path.join(__dirname, "public")));
 //session management..
 
 const store = MongoStore.create({
-    mongoUrl : DB_URL,
+    mongoUrl : process.env.ATLAS_DB,
     crypto : {
         secret : process.env.SESSION_SECRET
     },
